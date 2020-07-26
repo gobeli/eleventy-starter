@@ -1,0 +1,26 @@
+@import '../variables';
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $FONT_PRIMARY;
+  color: var(--color-text);
+  overflow: visible;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.25em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.125em;
+}
+h4 {
+  font-size: 0.875em;
+}
