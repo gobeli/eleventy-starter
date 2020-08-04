@@ -6,7 +6,7 @@ module.exports = function (config) {
       data: '../_data',
       includes: '../_includes',
     },
-    templateFormats: ['njk', 'md'],
+    templateFormats: ['njk', 'html', 'md'],
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
