@@ -14,6 +14,7 @@ const criticalCss = () =>
   src('src/styles/critical.scss')
     .pipe(sass())
     .pipe(postcss([autoprefixer, cssnano]))
+    .pipe(dest('dist'))
     .pipe(dest('src/_includes'));
 
 task('buildCss', parallel(css, criticalCss));
