@@ -1,20 +1,18 @@
-const Intro = require('../_includes/components/Intro');
-const Header = require('../_includes/components/Header');
+const htm = require('htm');
+
+const Index = require('../content/index.11ty');
+
+const html = htm.bind(h);
 
 var HomePreview = createClass({
   render: function () {
     var entry = this.props.entry;
     var image = entry.getIn(['data', 'photo']);
-    var bg = this.props.getAsset(image);
+    var photo = this.props.getAsset(image);
     var title = entry.getIn(['data', 'title']);
-    return h(
-      'div',
-      {},
-      h('div', { dangerouslySetInnerHTML: { __html: Header({ title, photo: bg.toString() }) } }),
-      h('div', {
-        dangerouslySetInnerHTML: { __html: Intro({ intro: entry.getIn(['data', 'intro']) }) },
-      })
-    );
+    var intro = entry.getIn(['data', 'intro']);
+    const index = new Index();
+    return html([index.render({ home: { photo, title, intro } })]);
   },
 });
 
