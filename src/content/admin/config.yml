@@ -1,6 +1,3 @@
----
-permalink: 'admin/config.yml'
----
 backend:
   name: github
   repo: gobeli/eleventy-starter

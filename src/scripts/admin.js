@@ -1,14 +1,17 @@
-const htm = require('htm');
+import markdownFilter from '../filters/markdown-filter';
 
-const Index = require('../content/index.11ty');
+const env = nunjucks.configure();
 
-const html = htm.bind(h);
+env.addFilter('markdown', markdownFilter);
 
-var HomePreview = createClass({
-  render: function () {
-    const index = new Index();
-    return html([index.render({ home: this.props.entry.get('data').toJS() })]);
-  },
-});
+const Preview = ({ entry, path, context }) => {
+  const data = context({ home: entry.get('data').toJS() });
+  const html = env.render(path, data);
+  return <div dangerouslySetInnerHTML={{ __html: html }} />;
+};
 
-CMS.registerPreviewTemplate('home', HomePreview);
+const Home = ({ entry }) => (
+  <Preview entry={entry} path="index.njk" context={(context) => context} />
+);
+
+CMS.registerPreviewTemplate('home', Home);
