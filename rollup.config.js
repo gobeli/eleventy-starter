@@ -19,4 +19,15 @@ export default [
     external: ['markdown-it'],
     plugins: [builtins(), babel(), json(), commonjs()],
   },
+  {
+    input: 'src/scripts/app',
+    output: [
+      {
+        file: 'dist/app.js',
+        format: 'iife',
+        sourcemap: true
+      }
+    ],
+    plugins: [babel()],
+  }
 ];

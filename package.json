@@ -26,13 +26,12 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "scripts": {
-    "build": "npm-run-all clean build:css eleventy build:templates",
+    "build": "npm-run-all clean build:css build:js eleventy",
     "clean": "rm -rf dist",
     "start": "npm-run-all build --parallel watch:css watch:js watch:eleventy",
     "eleventy": "eleventy",
     "build:css": "gulp buildCss",
     "build:js": "rollup -c",
-    "build:templates": "nunjucks-precompile src/content > dist/admin/templates.js -i \"\\.njk$\"",
     "watch:eleventy": "eleventy --serve",
     "watch:css": "gulp buildCss && gulp watch",
     "watch:js": "rollup -c --watch"
