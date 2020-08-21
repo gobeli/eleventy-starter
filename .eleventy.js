@@ -1,12 +1,8 @@
-const yaml = require('js-yaml');
-
 const markdownFilter = require('./src/filters/markdown-filter.js');
 
 module.exports = function (config) {
   // filters
   config.addFilter('markdown', markdownFilter);
-
-  config.addDataExtension('yml', (contents) => yaml.safeLoad(contents));
 
   config.addPassthroughCopy('static');
   config.addPassthroughCopy('src/content/admin/config.yml');

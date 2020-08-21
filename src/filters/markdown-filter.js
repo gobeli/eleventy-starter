@@ -5,6 +5,5 @@ const markdownIt = require('markdown-it')({
 });
 
 module.exports = function markdown(value) {
-  console.log(value);
   return markdownIt.render(value);
 };
