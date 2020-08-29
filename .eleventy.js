@@ -9,8 +9,12 @@ const markdownFilter = require('./src/filters/markdown-filter.js');
 const env = new nunjucks.Environment();
 env.addFilter('markdown', markdownFilter);
 
+function precompileTemplate(file) {
+    return nunjucks.precompile(file, { env, name: file.split('/').slice(2).join('/') })
+}
+
 function precompileTemplates() {
-  glob('src/**/*.njk', (err, files) => {
+  glob('src/_includes/**/*.{njk,css}', (err, files) => {
     if (err) {
       throw err
     }
@@ -60,7 +64,7 @@ module.exports = function (config) {
       output: 'dist',
       data: '../_data',
       includes: '../_includes',
-      layouts: '../_layouts'
+      layouts: '../_includes/layouts'
     },
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
