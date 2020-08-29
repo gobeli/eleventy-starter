@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %}
+
+<div>
+  <header class="home-header">
+    <img class="home-header__photo" src="{{ photo }}" alt="{{ title }}" />
+    <h1 class="home-header__title">{{ title }}</h1>
+  </header>
+  <div class="home-intro">
+    <div class="home-intro__text">{{ intro | markdown | safe }}</div>
+  </div>
+</div>

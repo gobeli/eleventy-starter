@@ -30,12 +30,12 @@ module.exports = function (config) {
 
   config.addPlugin(pluginLocalRespimg, {
     folders: {
-      source: '.', 
-      output: 'dist', 
+      source: '.',
+      output: 'dist',
     },
     images: {
       resize: {
-        min: 250, 
+        min: 250,
         max: 1500,
         step: 250,
       },
@@ -60,6 +60,7 @@ module.exports = function (config) {
       output: 'dist',
       data: '../_data',
       includes: '../_includes',
+      layouts: '../_layouts'
     },
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
