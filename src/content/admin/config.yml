@@ -12,7 +12,7 @@ collections:
         name: home
         file: src/content/home.md
         fields:
-          - { label: Layout, name: layout, widget: hidden, default: home.njk }
+          - { label: Layout, name: layout, widget: hidden, default: home.liquid }
           - { label: Title, name: title, widget: string }
           - { label: Intro, name: intro, widget: markdown }
           - { label: Body, name: body, widget: markdown }
@@ -23,6 +23,6 @@ collections:
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: Layout, name: layout, widget: hidden, default: post.njk }
+      - { label: Layout, name: layout, widget: hidden, default: post.liquid }
       - { label: Title, name: title, widget: string }
       - { label: Body, name: body, widget: markdown }

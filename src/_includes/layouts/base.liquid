@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>{{ title }}</title>
     <style>
-      {% include "critical.css" %}
+      {% include 'critical.css' %}
     </style>
     <link rel="stylesheet" href="/app.css" />
   </head>
   <body>
-    {% include "components/nav.njk" %}
+    {% include 'components/nav.liquid' %}
     <main class="page">
       {% block content %}
       {% endblock content %}
@@ -18,3 +18,4 @@
     <script src="/app.js"></script>
   </body>
 </html>
+

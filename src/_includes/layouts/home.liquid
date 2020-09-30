@@ -1,4 +1,4 @@
-{% extends "layouts/base.njk" %}
+{% layout 'layouts/base.liquid' %}
 
 {% block content %}
 <div>
@@ -7,8 +7,8 @@
     <h1 class="home-header__title">{{ title }}</h1>
   </header>
   <div class="home-intro">
-    <div class="home-intro__text">{{ intro | markdown | safe }}</div>
+    <div class="home-intro__text">{{ intro | markdown }}</div>
   </div>
-  {{ content | safe }}
+  {{ content }}
 </div>
 {% endblock %}
