@@ -1,7 +1,7 @@
 ---
 layout: home.liquid
-title: Test
-intro: '**A Test Intro**'
+title: A Title
+intro: "**A Test Intro**"
 photo: /static/images/guillaume-galtier-3yrppyqpoci-unsplash.jpg
 ---
-Hello helo
+I _am_ **markdown**
