@@ -18,6 +18,10 @@ class Preview extends React.Component {
   }
 
   renderFile() {
+    if (!this.state.template) {
+      console.warn('Template not yet parsed');
+      return;
+    }
     const data = this.props.context(this.props.entry.get('data').toJS());
     data.content = data.body;
     engine.render(this.state.template, data)
@@ -44,11 +48,11 @@ class Preview extends React.Component {
 }
 
 const Home = ({ entry }) => (
-  <Preview entry={entry} path="layouts/home.liquid" context={(context) => context} />
+  <Preview entry={entry} path="layouts/home.html" context={(context) => context} />
 );
 
 const Post = ({ entry }) => (
-  <Preview entry={entry} path="layouts/post.liquid" context={(context) => context} />
+  <Preview entry={entry} path="layouts/post.html" context={(context) => context} />
 );
 
 CMS.registerPreviewTemplate('home', Home);

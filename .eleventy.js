@@ -6,6 +6,7 @@ module.exports = function (config) {
   // filters
   config.addFilter('markdown', markdownFilter);
 
+  // passthroughtCopies
   config.addPassthroughCopy('static');
   config.addPassthroughCopy('src/content/admin/config.yml');
   config.addPassthroughCopy('src/_includes');
@@ -15,6 +16,8 @@ module.exports = function (config) {
     strict_filters: true
   });
 
+  config.addWatchTarget('src/scripts/**/*.js');
+
   config.addPlugin(pluginLocalRespimg, {
     folders: {
       source: '.',
@@ -23,18 +26,15 @@ module.exports = function (config) {
     images: {
       resize: {
         min: 250,
-        max: 1500,
-        step: 250,
+        max: 1750,
+        step: 500,
       },
-      sizes: '100vw',
       lazy: true,
       watch: {
         src: 'static/images/**/*',
       }
     }
   });
-
-  config.addWatchTarget('src/scripts/**/*.js');
 
   return {
     dir: {

@@ -1,5 +1,5 @@
 ---
-layout: home.liquid
+layout: home
 title: A Title
 intro: "**A Test Intro**"
 photo: /static/images/guillaume-galtier-3yrppyqpoci-unsplash.jpg
